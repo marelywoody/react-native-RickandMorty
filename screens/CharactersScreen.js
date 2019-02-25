@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, ActivityIndicator,Image } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ActivityIndicator,Image, ScrollView } from 'react-native';
 
 import MenuButton from '../components/MenuButton';
 
@@ -42,7 +42,7 @@ export default class CharactersScreen extends React.Component {
   render() {
     if(this.state.isLoading){
       return(
-        <View style={styles.container}>
+        <View style={styles.containerLoad}>
           <MenuButton navigation={this.props.navigation}/>
           <ActivityIndicator />
         </View>
@@ -50,11 +50,17 @@ export default class CharactersScreen extends React.Component {
     }
     return (
       <View style={styles.container}>
-        <MenuButton navigation={this.props.navigation}/>
-        <FlatList 
+        <View  style={styles.containerButton}>
+          <MenuButton navigation={this.props.navigation}/>
+        </View>
+        <ScrollView style={styles.scrollView}>
+          <View>
+          <FlatList 
           data={this.state.dataSource}
           renderItem={this.renderItem}
         />
+          </View>
+        </ScrollView>
       </View>
     );
   }
@@ -64,15 +70,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  containerLoad:{
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  containerButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 100,
+  },
+  scrollView:{
+    flex: 1,
   },
   imagen:{
     height:100,
     width: 100,
-    top: 100,
+    marginBottom: 10,
   },
-  name:{
-    top: 100,
-  }
 });
