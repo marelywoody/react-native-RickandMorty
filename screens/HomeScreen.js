@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 
 import MenuButton from '../components/MenuButton'
 
@@ -8,7 +8,7 @@ class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <MenuButton navigation={this.props.navigation}/>
-        <Text style={styles.text}>Home</Text>
+        <Image source={require('../assets/rickandmorty.jpg')} style={styles.image} />
       </View>
     );
   }
@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    fontSize: 50,
+  image: {
+    height: 210,
+    width: 270,
+    borderRadius: 10,
   }
 });
