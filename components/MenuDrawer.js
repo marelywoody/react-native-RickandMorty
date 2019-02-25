@@ -24,7 +24,7 @@ export default class MenuDrawer extends React.Component {
         <View style={styles.bottomLinks}>
           {this.navLink('Home','Home')}
           {this.navLink('Characters','Characters')}
-          {this.navLink('Season01','Season01')}
+          {this.navLink('Season01','Season 01')}
         </View>
       </View>
     );
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   topLinks:{
     height: 180,
-    backgroundColor: '#05635C',
+    backgroundColor: '#067068',
   },
   viewImage:{
     flex: 1,
