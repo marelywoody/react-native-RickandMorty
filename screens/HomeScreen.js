@@ -7,7 +7,7 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <MenuButton />
+        <MenuButton navigation={this.props.navigation}/>
         <Text style={styles.text}>Home</Text>
       </View>
     );
