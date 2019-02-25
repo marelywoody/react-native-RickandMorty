@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Dimensions, StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import { Platform, ScrollView ,Dimensions, StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
@@ -17,7 +17,9 @@ export default class MenuDrawer extends React.Component {
     return(
       <View style={styles.container}>
         <View style={styles.topLinks}>
-          <Text style={{color:'#fff', paddingTop:40}}>MenuDRawer</Text>
+          <View style={styles.viewImage}>
+            <Image source={require('../assets/rick.jpg')} style={styles.imagen}/>
+          </View>
         </View>
         <View style={styles.bottomLinks}>
           {this.navLink('Home','Home')}
@@ -35,11 +37,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#DFE0E8',
   },
   navlinks:{
-    height: 100,
+    height: 60,
   },
   topLinks:{
     height: 180,
     backgroundColor: '#05635C',
+  },
+  viewImage:{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  imagen: {
+    height: 90,
+    width: 90,
+    borderRadius: 50,
   },
   bottomLinks:{
     flex:1,
