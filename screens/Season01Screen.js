@@ -31,12 +31,20 @@ class Season01Screen extends React.Component {
   renderItem = ({item}) => {
     return(
       <View style={styles.containerInfo}>
-        <Text>Nombre: {item.name}</Text>
-        <Text>Emitido: {item.air_date}</Text>
-        <Text>Episodio: {item.episode}</Text>
+        <Text style={styles.name}>Nombre: {item.name}</Text>
+        <Text style={styles.airDate}>Emitido: {item.air_date}</Text>
+        <Text style={styles.episode}>Episodio: {item.episode}</Text>
       </View>
     );
   }
+
+  renderSeparador = () => {
+    return(
+      <View style={styles.separador}>
+
+      </View>
+    );
+  };
 
   render() {
     if(this.state.isLoading){
@@ -57,6 +65,8 @@ class Season01Screen extends React.Component {
           <FlatList 
           data={this.state.dataSource}
           renderItem={this.renderItem}
+          keyExtractor={(item, index) => index}
+          ItemSeparatorComponent={this.renderSeparador}
         />
           </View>
         </ScrollView>
@@ -86,6 +96,24 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   containerInfo:{
-    marginBottom: 10,
+    marginTop: 4,
+    marginBottom: 4,
+  },
+  name:{
+    fontSize: 18,
+    marginBottom: 3,
+  },
+  airDate:{
+    fontSize: 18,
+    marginBottom: 3,
+  },
+  episode:{
+    fontSize: 18,
+    marginBottom: 3,
+  },
+  separador:{
+    height: 1,
+    width: '100%',
+    backgroundColor: '#000',
   },
 });

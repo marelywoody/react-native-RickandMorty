@@ -30,15 +30,23 @@ export default class CharactersScreen extends React.Component {
 
   renderItem = ({item}) => {
     return(
-      <View>
+      <View style={styles.containerInfo}>
         <Image style={styles.imagen}source={{uri: item.image}}/>
-        <View style={styles.name}>
-          <Text>{item.name}</Text>
+        <View style={styles.containerName}>
+          <Text style={styles.name}>{item.name}</Text>
         </View>
       </View>
     );
   }
   
+  renderSeparador = () => {
+    return(
+      <View style={styles.separador}>
+
+      </View>
+    );
+  };
+
   render() {
     if(this.state.isLoading){
       return(
@@ -58,6 +66,8 @@ export default class CharactersScreen extends React.Component {
           <FlatList 
           data={this.state.dataSource}
           renderItem={this.renderItem}
+          keyExtractor={(item, index) => index}
+          ItemSeparatorComponent={this.renderSeparador}
         />
           </View>
         </ScrollView>
@@ -84,9 +94,28 @@ const styles = StyleSheet.create({
   scrollView:{
     flex: 1,
   },
+  containerInfo:{
+    flex: 1,
+    flexDirection:'row',
+  },
   imagen:{
     height:100,
     width: 100,
-    marginBottom: 10,
+    marginBottom: 3,
+    marginTop: 3,
+  },
+  containerName:{
+    flex: 1,
+    justifyContent: 'center',
+    marginLeft: 5,
+  },
+  name: {
+    fontSize: 18,
+    marginBottom: 15,
+  },
+  separador:{
+    height: 1,
+    width: '100%',
+    backgroundColor: '#000',
   },
 });
