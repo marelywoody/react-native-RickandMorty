@@ -7,7 +7,7 @@ export default class MenuButton extends React.Component {
     return(
       <Ionicons 
       name="md-menu" 
-      color="#000000" 
+      color="#fff" 
       size={32} 
       style={styles.menuIcon}
       onPress={()=> this.props.navigation.toggleDrawer()}

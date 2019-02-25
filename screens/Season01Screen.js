@@ -80,7 +80,7 @@ export default Season01Screen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3C7CC9',
   },
   containerLoad:{
     flex: 1,
@@ -102,18 +102,21 @@ const styles = StyleSheet.create({
   name:{
     fontSize: 18,
     marginBottom: 3,
+    color:'#fff',
   },
   airDate:{
     fontSize: 18,
     marginBottom: 3,
+    color:'#fff',
   },
   episode:{
     fontSize: 18,
+    color:'#fff',
     marginBottom: 3,
   },
   separador:{
     height: 1,
     width: '100%',
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
   },
 });

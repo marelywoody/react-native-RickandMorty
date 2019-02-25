@@ -79,7 +79,7 @@ export default class CharactersScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#3C7C95',
   },
   containerLoad:{
     flex: 1,
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   containerInfo:{
     flex: 1,
     flexDirection:'row',
+    width: '80%',
   },
   imagen:{
     height:100,
@@ -112,10 +113,11 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 18,
     marginBottom: 15,
+    color:'#fff',
   },
   separador:{
     height: 1,
     width: '100%',
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
   },
 });
